@@ -1,0 +1,110 @@
+/* 长文本隐藏 */
+.text_hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*清除浮动*/
+.clearfix:before {
+  display: table;
+  content: "";
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  clear: both;
+  display: table;
+  content: "";
+  box-sizing: border-box;
+}
+
+/*1像素边框*/
+.border_1px {
+  position: relative;
+}
+
+.border_1px:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border: 1px solid rgba(51, 51, 255, 0.6);
+  content: ' '
+}
+
+@media(-webkit-min-device-device-pixel-ratio: 1.5),
+(min-device-device-pixel-ratio: 1.5) {
+  .border_1px::after {
+    -webkit-transform: scaleY(0.7);
+    transform: scaleY(0.7);
+  }
+}
+
+@media(-webkit-min-device-device-pixel-ratio: 2),
+(min-device-device-pixel-ratio: 2) {
+  .border_1px::after {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+}
+
+.container {
+  height: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4% 0;
+  text-align: center;
+}
+
+.tip {
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  padding: 6px 20px;
+  margin: 0 auto 10px;
+  font-size: 20px;
+  background: #03a9f4;
+  color: #fff;
+}
+
+.tip:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 42%;
+  bottom: -10px;
+  content: "";
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: #03a9f4 transparent;
+}
+
+.title {
+  padding: 6px 0 10px;
+  font-family: "Overlock",
+    cursive;
+  color: #2d405e;
+  font-size: 36px;
+}
+
+.border {
+  display: block;
+  width: 20%;
+  height: 1px;
+  position: relative;
+  margin: 0 auto 30px;
+  background: #8c8989;
+}
+
+.border:after {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  content: " ";
+  width: 40%;
+  height: 5px;
+  margin-top: -2px;
+  background: #03a9f4;
+}
